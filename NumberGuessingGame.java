@@ -6,10 +6,10 @@ public class NumberGuessingGame {
         Scanner input = new Scanner(System.in);
         Random random = new Random();
 
-        // Define the secret number's upper and lower bounds 
+      
         int lowerBound = 1;
         int upperBound = 100;       
-        //Limiting the number of trials
+      
         int maxTrials=15;
         int rounds=0;
         int totalScore=0;  
@@ -17,23 +17,21 @@ public class NumberGuessingGame {
         System.out.println("Welcome to the Number Guessing Game!");
         System.out.println("------------------------------------");
            do{ 
-            // Initialize to track whether or not the user properly guessed.
+       
             boolean CorrectGuess = false;
             rounds++; 
-            // Obtain a random secret number within the limits that are mentioned.
+       
             int secretNumber = random.nextInt(upperBound - lowerBound + 1) + lowerBound;
-            // Initialize the number of guesses to 0
+        
             int Trials = 0; 
             System.out.println("ROUND:"+rounds);
             System.out.println("I'm thinking of a number between " + lowerBound + " and " + upperBound);
         
-        // Start a loop until the user guesses the correct number
         while (!CorrectGuess && Trials<=maxTrials) {
             System.out.print("Guess the number: ");
             int UserInput = input.nextInt();
-            Trials++;  // Increment the number of guesses
-
-            // Compare the user's guess with the generated number
+            Trials++;  //
+          
             if (UserInput < secretNumber) {
                 System.out.println("Too low! Try again.");
             } 
@@ -41,7 +39,7 @@ public class NumberGuessingGame {
                 System.out.println("Too high! Try again.");
             } 
             else{
-                // If the guess is correct, display a congratulations and the number of tries
+                
                 System.out.println("Congratulations! You've guessed the  secret number ("+secretNumber+") correctly");
                 CorrectGuess = true;  // Set to true to exit the loop
             }
